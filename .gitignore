@@ -1,0 +1,7 @@
+*
+!.gitignore
+!README.md
+!docs/
+!docs/**
+!scripts/
+!scripts/build_github_pages_bundle.py
