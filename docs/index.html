@@ -86,6 +86,9 @@ p, li { font-size:14px; line-height:1.5; }
 .mini { border:1px solid var(--line); border-radius:8px; padding:10px; background:#fbfcfe; min-width:0; }
 .mini .k { color:var(--muted); font-size:12px; }
 .mini .v { font-size:17px; font-weight:750; margin-top:3px; overflow-wrap:anywhere; }
+.tab-guide .mini { height:100%; }
+.tab-guide .mini .v { font-size:15px; line-height:1.3; }
+.tab-guide .mini p { margin:8px 0 0; font-size:12px; line-height:1.45; color:var(--muted); }
 .table-wrap { max-height:68vh; overflow:auto; border:1px solid var(--line); border-radius:8px; }
 table.data-table { border-collapse:collapse; width:100%; min-width:1450px; font-size:12px; background:#fff; }
 table.data-table th, table.data-table td { border-bottom:1px solid #e5e7eb; padding:8px 7px; text-align:left; vertical-align:top; }
@@ -273,6 +276,67 @@ footer { padding:12px 28px 22px; color:var(--muted); font-size:12px; }
         <li>Side-by-side scenario map, pump-difference map, drainage-difference map, time series, and lat/lon pump table.</li>
       </ul>
       <p class="note">Generated: 2026-05-02 17:39 IST</p>
+    </div>
+  </div>
+  <div class="panel" style="margin-top:14px">
+    <h2>How To Use Each Tab</h2>
+    <p class="note">Suggested flow: start here, then use Layer Map or Ward Map for screening, Query for a specific point, and finish with Evidence, Backflow, Pump Table, and Method &amp; QA before action.</p>
+    <div class="grid3 tab-guide">
+      <div class="mini">
+        <div class="k">Overview</div>
+        <div class="v">Read the screening story first.</div>
+        <p>Use this tab for the plain-language interpretation, the list of included scenarios, and the key limits on what decisions the dashboard can and cannot support.</p>
+      </div>
+      <div class="mini">
+        <div class="k">Layer Map</div>
+        <div class="v">Screen one scenario on the main operational map.</div>
+        <p>Pick a scenario and flood variable, toggle drainage and field layers, and draw an AOI box when you need area-level statistics instead of one-point results.</p>
+      </div>
+      <div class="mini">
+        <div class="k">Impact Atlas</div>
+        <div class="v">Compare scenario outputs side by side.</div>
+        <p>Use this when you want a fast visual comparison of how depth, velocity, or persistence shifts between scenarios without changing map controls one by one.</p>
+      </div>
+      <div class="mini">
+        <div class="k">Pump Effect</div>
+        <div class="v">Measure what pumps and drainage change.</div>
+        <p>This tab contains pump-on and drainage-difference views, plus time-series summaries that help show whether improvements are local, transferred, or persistent.</p>
+      </div>
+      <div class="mini">
+        <div class="k">Animation</div>
+        <div class="v">See when flooding arrives, peaks, and recedes.</div>
+        <p>Use the time animation and progression maps to understand timing, not just final-state depth, especially for response sequencing and pump deployment windows.</p>
+      </div>
+      <div class="mini">
+        <div class="k">Ward Map</div>
+        <div class="v">Zoom into one ward with hover readouts.</div>
+        <p>Crop to Wards 21 to 24, then hover to read local depth, velocity, and persistence for the selected scenario and operational layer combination.</p>
+      </div>
+      <div class="mini">
+        <div class="k">Query</div>
+        <div class="v">Check one location, pump ID, egress ID, or coordinate.</div>
+        <p>Enter decimal coordinates, DMS, a named place, or an asset ID to drop a marker, snap to the nearest flooded active cell when needed, and read local scenario statistics.</p>
+      </div>
+      <div class="mini">
+        <div class="k">Evidence</div>
+        <div class="v">Cross-check uploaded field evidence with the model.</div>
+        <p>Use this tab to review the waterlogging register, matched field locations, and where the model agrees or disagrees with reported observations.</p>
+      </div>
+      <div class="mini">
+        <div class="k">Backflow</div>
+        <div class="v">Review ranked inlet and manhole surcharge points.</div>
+        <p>This table highlights where the coupled drainage model sends water back to the surface so field teams can prioritize drain checks and confirm the physical asset nearby.</p>
+      </div>
+      <div class="mini">
+        <div class="k">Pump Table</div>
+        <div class="v">Review pump locations, egress choices, and actuation.</div>
+        <p>Use this for implementation detail: where pumps sit, which screened egress destination each one uses, and how the fleet behaves by scenario.</p>
+      </div>
+      <div class="mini">
+        <div class="k">Method &amp; QA</div>
+        <div class="v">Check assumptions, QA, and caveats before sharing.</div>
+        <p>Open this tab when you need the technical notes, validation logic, data caveats, and the safest wording for external communication or review.</p>
+      </div>
     </div>
   </div>
   <div class="panel use-limits">
