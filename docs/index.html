@@ -239,7 +239,7 @@ footer { padding:12px 28px 22px; color:var(--muted); font-size:12px; }
 <body>
 <header>
   <h1>Galleria Wards 21-24 Corrected Flood Scenario Dashboard</h1>
-  <p class="sub">Single-file dashboard for the building-enforced AIResQ physics-AI coupled flood resolver. It keeps the scientific layers, six scenario comparisons, pump egress table, AOI query, and time animation separated so the view stays readable.</p>
+  <p class="sub">Single-file dashboard for the building-enforced AIReSQ physics-AI coupled flood resolver. Jointly developed by IIT Gandhinagar and AIReSQ under agreement carried out under the AICOE Sustainable Cities project. It keeps the scientific layers, six scenario comparisons, pump egress table, AOI query, and time animation separated so the view stays readable.</p>
 </header>
 <section class="metrics"><article class='metric-card'><span>Corrected model domain</span><strong>Wards 21, 22, 23, 24</strong><small>Galleria-focused adaptive physics-AI flood resolver</small></article><article class='metric-card'><span>Building QA</span><strong>Pass</strong><small>0 m2 building wet area above 5 cm</small></article><article class='metric-card'><span>Rainfall forcing</span><strong>113 mm / 2 hr</strong><small>July 2025 core-burst hyetograph + 720 min dry recession</small></article><article class='metric-card'><span>Persistence window</span><strong>840 min</strong><small>Cells still wet at final time are lower-bound persistence values</small></article><article class='metric-card'><span>Pump-on moved volume</span><strong>44,997 m3</strong><small>Mass-conserving relocation to screened egress cells</small></article><article class='metric-card'><span>Available pump fleet</span><strong>20 x 20 HP</strong><small>Fixed municipal fleet used in rerun; total modeled capacity 1.0 m3/s</small></article><article class='metric-card'><span>Partial+drain+pump moved</span><strong>44,968 m3</strong><small>Working-drain case with pumps enabled</small></article><article class='metric-card'><span>Virtual drainage outfalls</span><strong>88,048 m3</strong><small>3 relief points, total 2.04 m3/s after 120 min</small></article><article class='metric-card'><span>Pre-filled stress case</span><strong>37,297 m3</strong><small>Drainage/sump storage present at final time</small></article><article class='metric-card'><span>Partial-drain deep wet-area gain</span><strong>11.6 ha</strong><small>Choked minus partial at 840 min, >15 cm</small></article><article class='metric-card'><span>Deep-cell audit</span><strong>Survey trigger</strong><small>High depth remains on active road/subgrade context</small></article></section>
 <nav class="tabs">
@@ -275,6 +275,7 @@ footer { padding:12px 28px 22px; color:var(--muted); font-size:12px; }
         <li>Layer-controlled map for depth, velocity, persistence, buildings, roads, drainage, egress, recharge candidates, official waterlogging points, subgrade survey trigger, flow directions, and adaptive refinement zones.</li>
         <li>Side-by-side scenario map, pump-difference map, drainage-difference map, time series, and lat/lon pump table.</li>
       </ul>
+      <p class="note">Jointly developed by IIT Gandhinagar and AIReSQ under agreement carried out under the AICOE Sustainable Cities project.</p>
       <p class="note">Generated: 2026-05-02 17:39 IST</p>
     </div>
   </div>
@@ -428,7 +429,7 @@ footer { padding:12px 28px 22px; color:var(--muted); font-size:12px; }
         <div class="legend-row"><span class="swatch" style="background:#3b82f6"></span><span>Depth scale is placed below the map. Values below 0.05 m are hidden.</span></div>
         <div class="legend-row"><span class="swatch" style="background:#f97316"></span><span>Velocity: yellow to purple, 0.05-1.5 m/s shown</span></div>
         <div class="legend-row"><span class="swatch" style="background:#f59e0b"></span><span>Persistence: minutes above 5 cm</span></div>
-        <div class="legend-row"><span class="line"></span><span>Blue lines: MCG/NAS drainage collectors</span></div>
+        <div class="legend-row"><span class="line"></span><span>Blue lines: mapped drainage collectors</span></div>
         <div class="legend-row"><span class="dot" style="background:#7f1d1d;box-shadow:0 0 0 1px #7f1d1d"></span><span>Dark red circles: top predicted backflow/surcharge inlet exchange points in the pre-filled drainage stress case; larger circles mean larger cumulative return volume.</span></div>
         <div class="legend-row"><span class="dot" style="border-radius:2px;background:#991b1b;transform:rotate(45deg)"></span><span>Diamonds: uploaded official waterlogging points; red = hypercritical, orange = moderate, blue = minor.</span></div>
         <div class="legend-row"><span class="dot" style="background:#111827;box-shadow:0 0 0 2px #facc15"></span><span>Black/yellow star: SUB-01 underpass/subgrade survey trigger.</span></div>
@@ -3933,10 +3934,10 @@ footer { padding:12px 28px 22px; color:var(--muted); font-size:12px; }
   <div class="panel">
     <h2>Method And QA Notes</h2>
     <ul class="method-list">
-      <li>The AIResQ physics-AI coupled flood resolver uses building enforcement: building centroids are obstruction-elevated, receive zero direct rainfall, and are excluded from active-surface reporting.</li>
+      <li>The AIReSQ physics-AI coupled flood resolver uses building enforcement: building centroids are obstruction-elevated, receive zero direct rainfall, and are excluded from active-surface reporting.</li>
       <li>Outer boundary is transmissive/open. Boundary flux closure is reported separately because water can legitimately leave or enter at the domain edge.</li>
       <li>Rainfall is Horton-excess rainfall derived from prepared LULC/infiltration rasters; roof rainfall is redistributed to nearby non-building receiver cells.</li>
-      <li>Drainage is represented through mapped MCG/NAS collector topology, inlets, local storage, surcharge-return rules, and three temporary virtual downstream relief points for the drainage-working cases. The virtual relief points prevent water from remaining artificially trapped after rainfall stops.</li>
+      <li>Drainage is represented through mapped collector topology, inlets, local storage, surcharge-return rules, and three temporary virtual downstream relief points for the drainage-working cases. The virtual relief points prevent water from remaining artificially trapped after rainfall stops.</li>
       <li>Pump scenario is mass-conserving: volume removed from intake cells is added back at screened egress cells, so local increases near receptors are expected.</li>
       <li>Pre-filled drainage/sump scenarios start mapped network storage at 90% full before rainfall. These are stress tests for blocked downstream or already-loaded drainage conditions.</li>
       <li>Pump sites were regenerated after building enforcement using the corrected choked and partial-drainage outputs.</li>
@@ -3950,7 +3951,7 @@ footer { padding:12px 28px 22px; color:var(--muted); font-size:12px; }
       <li><strong>Purpose:</strong> screening-level decision support for prioritization, field checks, pump staging, and scenario comparison. It should not be used alone as a certified drainage design, legal flood boundary, land acquisition basis, or public safety order.</li>
       <li><strong>Terrain:</strong> model accuracy is limited by available DSM/DTM/DEM quality. Patchy or over-smoothed terrain, road crowns, underpasses, basement ramps, curbs, and local inverts can materially change hyperlocal depths.</li>
       <li><strong>SUB-01:</strong> the extreme-depth location is treated as an underpass/subgrade survey trigger. Confirm invert levels, sump condition, tailwater, and road-ramp connectivity before interpreting it as ordinary surface-water depth.</li>
-      <li><strong>Drainage:</strong> mapped MCG/NAS drainage geometry, inlets, sumps, and collector continuity are used where available. Drainage-working cases include temporary virtual downstream relief points where downstream continuity is plausible but field-verified outfall geometry is pending.</li>
+      <li><strong>Drainage:</strong> mapped drainage geometry, inlets, sumps, and collector continuity are used where available. Drainage-working cases include temporary virtual downstream relief points where downstream continuity is plausible but field-verified outfall geometry is pending.</li>
       <li><strong>Pumps:</strong> pump locations and capacities are planning placeholders based on an assumed 20 HP municipal mobile-pump class and field capacity. Actual pump curves, hose length, static head, fuel/power, crew access, and safe discharge permission must be verified.</li>
       <li><strong>Recharge or egress:</strong> parks/open lands are only screened receptor candidates. Water table, soil infiltration, water quality, ownership, utilities, ecological sensitivity, and public permission must be checked before use.</li>
       <li><strong>Map display:</strong> smoothed map and animation surfaces improve readability. Quantitative values should be read from the hover tooltip, tables, and exported model data. A smoothed red footprint may be wider than a narrow peak-depth model cell.</li>
