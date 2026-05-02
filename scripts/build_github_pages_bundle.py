@@ -211,6 +211,15 @@ def extract_query_data(script_text: str) -> tuple[str, str]:
 def rewrite_script(script_text: str) -> str:
     replacements = [
         (
+            "const names = document.getElementById('queryNames');\n"
+            "QUERY_DATA.gazetteer.forEach(g => {\n"
+            "  const opt = document.createElement('option');\n"
+            "  opt.value = g.name;\n"
+            "  names.appendChild(opt);\n"
+            "});\n\n",
+            "",
+        ),
+        (
             "function activateTab(tabId) {\n"
             "  document.querySelectorAll('.tabbtn').forEach(b => b.classList.toggle('active', b.dataset.tab === tabId));\n"
             "  document.querySelectorAll('.tab').forEach(t => t.classList.toggle('active', t.id === tabId));\n"
